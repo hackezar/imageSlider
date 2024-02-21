@@ -8,6 +8,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  devtool: 'inline-source-map',
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -17,6 +18,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Output Management',
     }),
+
+    
 
   ],
   entry: {

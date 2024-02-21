@@ -1,9 +1,21 @@
 import _ from "lodash";
 import "./style.css";
+import "./normalize.css";
 
 import  printMe  from './print.js';
 
-function component() {
+import { importPics, renderPics} from './renderPics.js';
+import renderCarousel from "./renderCarousel.js";
+import addArrowSymbols from "./addArrowSymbols.js";
+
+// Where the carousel will load main on start
+let main = 0;
+//
+
+let images = importPics();
+renderCarousel(images, main);
+main = addArrowSymbols(images, main);
+/*function component() {
   const element = document.createElement("div");
   const btn = document.createElement('button');
 
@@ -17,6 +29,9 @@ function component() {
   element.appendChild(btn);
 
   return element;
-}
+}*/
 
-document.body.appendChild(component());
+
+
+//document.body.appendChild(component());
+

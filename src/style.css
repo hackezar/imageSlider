@@ -1,3 +1,36 @@
-.hello {
-  color: red;
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.carouselPics {
+  height: auto;
+  width: 20vw;
+}
+
+#centerDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainCarousel {
+  height: 20vh;
+  width: auto;
+}
+
+.arrow {
+  height: 5vh;
+  width: auto;
+}
+
+.picContainer {
+  display: grid;
+  grid-template-columns: 2fr 6fr 2fr;
+  grid-template-rows: 1fr;
+  justify-content: space-between;
+  align-items: center;
 }
