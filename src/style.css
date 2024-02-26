@@ -1,36 +1,126 @@
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
 #container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
 }
 
 .carouselPics {
+  display: flex;
   height: auto;
-  width: 20vw;
+  max-width: 10vw;
+  max-height: 10vh;
 }
 
 #centerDiv {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
+#centerImage {
+  max-height: 80vh;
+}
+
+#rightInner {
+  display: flex;
+  justify-content: end;
+}
+
+
 .mainCarousel {
-  height: 20vh;
+  display: flex;
+  height: 80vh;
   width: auto;
+  max-width: 40vw;
 }
 
 .arrow {
   height: 5vh;
   width: auto;
+  cursor: pointer;
+}
+
+.arrow:hover {background-color: grey}
+
+.arrow:active {
+  background-color: grey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#leftArrow {
+  position: absolute;
+  left: 0;
+}
+
+#rightArrow {
+  position: absolute;
+  right: 0;
 }
 
 .picContainer {
+  width: 90vw;
   display: grid;
   grid-template-columns: 2fr 6fr 2fr;
   grid-template-rows: 1fr;
-  justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+}
+
+#navigationContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navigationIcon {
+  height: 2rem;
+  border-radius: 100%;
+}
+
+.navigationIcon:hover {
+  cursor: pointer;
+}
+
+.active {
+  border: 2px solid black;
+}
+
+.footer {
+  display: flex;
+}
+
+.email {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.fadeIn {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

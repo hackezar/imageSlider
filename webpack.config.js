@@ -18,7 +18,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Output Management',
     }),
-
     
 
   ],
