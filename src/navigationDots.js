@@ -1,8 +1,10 @@
+import addArrowSymbols from './addArrowSymbols';
+import { startInterval, stopInterval } from './autoSlide';
 import renderCarousel from './renderCarousel';
 import ImageIcon from './symbols/Circle-icons-image.svg';
 
-export default function renderNavigation(images, main) {
-    let footer = document.getElementById('footer');
+
+export default function renderNavigation(images, main, interval) {
     let navigationContainer = document.getElementById('navigationContainer');
     navigationContainer.innerHTML = "";
     // Put a border around the current image
@@ -16,18 +18,15 @@ export default function renderNavigation(images, main) {
         }
         // Change to that image on click
         imageDot.addEventListener('click', () => {
+            stopInterval(interval);
             let isStartup = false;
             main = i;
             renderCarousel(images, main, isStartup);
-            renderNavigation(images, main);
+            interval = startInterval(images, main);
+            renderNavigation(images, main, interval);
+            addArrowSymbols(images, main, interval);
         })
         navigationContainer.appendChild(imageDot);
     }
-    let autoNextSlide = function () {
-        main = main + 1;
-        let isStartup = false;
-        renderCarousel(images, main, isStartup);
-        renderNavigation(images, main);
-    }
-    let nextSlideAfter5 = setInterval(autoNextSlide, 5000);
+
 }

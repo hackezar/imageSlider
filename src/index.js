@@ -4,21 +4,26 @@ import "./normalize.css";
 
 import  printMe  from './print.js';
 
-import { importPics, renderPics} from './renderPics.js';
+import { importPics} from './renderPics.js';
 import renderCarousel from "./renderCarousel.js";
 import addArrowSymbols from "./addArrowSymbols.js";
 import renderNavigation from "./navigationDots.js";
+import { startInterval } from "./autoSlide.js";
+
+
 
 // Where the carousel will load main on start
 let main = 0;
 //
-
 let isStartup = true;
 // Import pictures from pics folder
 let images = importPics();
 renderCarousel(images, main, isStartup);
-main = addArrowSymbols(images, main);
-renderNavigation(images, main);
+let interval = startInterval(images, main);
+addArrowSymbols(images, main, interval);
+renderNavigation(images, main, interval);
+
+
 
 
 /*function component() {

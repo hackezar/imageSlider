@@ -1,3 +1,4 @@
+import { startInterval } from "./autoSlide";
 
 export default function renderCarousel(images, main, isStartup) {
     let mainSrc = "";
@@ -71,8 +72,6 @@ export default function renderCarousel(images, main, isStartup) {
         document.getElementById('rightInner').appendChild(rightImg);
         document.getElementById('leftInner').appendChild(leftImg);
     }
-    
 
-    return main;
 }
 
